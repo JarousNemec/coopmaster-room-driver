@@ -1,0 +1,7 @@
+services:
+  coop_door_driver:
+    build:
+      context: .
+    restart: always
+    ports:
+      - "9005:9005"
