@@ -4,6 +4,9 @@ from flask import Flask
 from waitress import serve
 
 from app import configuration
+from app.blueprints.admin_blueprint import admin_blueprint
+from app.blueprints.room_blueprint import room_blueprint
+from app.room.room_data_reader import start_gobbler
 
 
 def flask_app():
@@ -11,13 +14,23 @@ def flask_app():
 
     @app.route("/")
     def hello_world():
-        logging.info("Hello World!")
-        return configuration.hello_message
+        message = 'Hello from room driver'
+        logging.info(message)
+        return message
+
+    app.register_blueprint(admin_blueprint)
+    app.register_blueprint(room_blueprint)
 
     return app
 
-def server(host: str = "127.0.0.1", port: int = 80, ssl: bool = False):
+
+def server():
     manager_app = flask_app()
 
-    logging.info("Serving on http://"+configuration.host+":"+str(port))
+    start_gobbler()
+
+    host = configuration.config.HOST
+    port = configuration.config.PORT
+
+    logging.info(f"Serving on http://{host}:{port}")
     serve(manager_app,  port=port)
