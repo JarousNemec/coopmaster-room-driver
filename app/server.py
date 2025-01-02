@@ -6,7 +6,6 @@ from waitress import serve
 from app import configuration
 from app.blueprints.admin_blueprint import admin_blueprint
 from app.blueprints.room_blueprint import room_blueprint
-from app.room.room_data_reader import start_gobbler
 
 
 def flask_app():
@@ -26,8 +25,6 @@ def flask_app():
 
 def server():
     manager_app = flask_app()
-
-    start_gobbler()
 
     host = configuration.config.HOST
     port = configuration.config.PORT

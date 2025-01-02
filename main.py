@@ -1,5 +1,3 @@
-from app import configuration
-
 from app.logging.hen_logger import init_logger
 from app.server import server
 

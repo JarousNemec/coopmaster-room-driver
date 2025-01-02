@@ -31,8 +31,9 @@ void processCommand() {
   } else if (c == 'd') {
     light = false;
     serviceOutputs();
-  }else if (c == 's') {
-    String json = "{\"door\":" + String(doorOpen) + ", \"lamp\":" + String(light) + "}";
+  } else if (c == 's') {
+    //String json = "{\"door\":" + String(doorOpen) + ", \"lamp\":" + String(light) + "}";
+    String json = "{\"door\":" + String(doorOpen ? "\"open\"" : "\"close\"") + ", \"lamp\":" + String(light ? "\"on\"" : "\"off\"") + "}";
     Serial.println(json);
   }
 }
@@ -78,5 +79,4 @@ void loop() {
     readDhtData();
   }
   processCommand();
-  
 }

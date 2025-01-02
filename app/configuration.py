@@ -3,6 +3,8 @@ from typing import get_type_hints, Union
 
 from dotenv import load_dotenv
 
+from app.room.arduino_reader import ArduinoReader
+
 host = "127.0.0.1"
 port = 9005
 hello_message = "Hello from door driver"
@@ -23,9 +25,10 @@ class AppConfigError(Exception):
 class AppConfig:
     PORT: int = 29005
     HOST: str = "127.0.0.1"
-    # ROOM_COM_PORT = "COM4"
-    ROOM_COM_PORT: str = "/dev/ttyUSB0"  # linux Ubuntu wth weight Arduino
-    ROOM_INTERVAL_SEC: float = 0.9
+    ROOM_COM_PORT = "COM4"
+    # ROOM_COM_PORT: str = "/dev/ttyUSB0"  # linux Ubuntu wth weight Arduino 'COM4'
+    ROOM_READ_INTERVAL_SEC: int = 1
+    ROOM_COMMAND_INTERVAL_SEC: int = 5
 
 
     """
@@ -68,7 +71,7 @@ class AppConfig:
 
 
 config = AppConfig(os.environ)
-
+arduino = ArduinoReader()
 
 def get_log_directory():
     return "./logs/"
