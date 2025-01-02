@@ -22,7 +22,6 @@ class ArduinoReader:
             try:
                 if self.arduino:
                     try:
-                        time.sleep(configuration.config.ROOM_READ_INTERVAL_SEC)
                         self.arduino.write(command.encode('ascii'))
                         str_data = self.arduino.readline().decode('ascii')
                         logging.info(str_data)
