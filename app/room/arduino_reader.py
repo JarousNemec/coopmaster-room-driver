@@ -22,6 +22,7 @@ class ArduinoReader:
             try:
                 if self.arduino:
                     try:
+                        self.arduino.readall()
                         self.arduino.write(command.encode('ascii'))
                         str_data = self.arduino.readline().decode('ascii')
                         logging.info(str_data)
