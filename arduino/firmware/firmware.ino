@@ -65,6 +65,7 @@ void setup() {
   pinMode(pinLight, OUTPUT);
   pinMode(pinRele1, OUTPUT);
   pinMode(pinRele2, OUTPUT);
+  serviceOutputs();
 }
 
 void loop() {
