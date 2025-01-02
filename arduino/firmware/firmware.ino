@@ -17,7 +17,7 @@ bool light = true;
 void processCommand() {
   char c = Serial.read();
   if (c == 'j') {
-    String json = "{\"temperature\":\"" + String(temp) + "\", \"humidity\":\"" + String(hum) + "\"}";
+    String json = "{\"temperature\":" + String(temp) + ", \"humidity\":" + String(hum) + "}";
     Serial.println(json);
   } else if (c == 'o') {
     doorOpen = true;
@@ -31,6 +31,9 @@ void processCommand() {
   } else if (c == 'd') {
     light = false;
     serviceOutputs();
+  }else if (c == 's') {
+    String json = "{\"door\":" + String(doorOpen) + ", \"lamp\":" + String(light) + "}";
+    Serial.println(json);
   }
 }
 
