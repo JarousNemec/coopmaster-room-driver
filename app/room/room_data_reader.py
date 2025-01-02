@@ -35,6 +35,26 @@ def get_temperature():
     return temperature_data
 
 
+def get_door_state():
+    global temperature_data
+    return temperature_data
+
+
+def get_lamp_state():
+    global temperature_data
+    return temperature_data
+
+
+def set_door_state():
+    global temperature_data
+    return temperature_data
+
+
+def set_lamp_state():
+    global temperature_data
+    return temperature_data
+
+
 def run_gobbler():
     global weight_data
     global temperature_data
@@ -91,4 +111,4 @@ def run_gobbler():
 
 def start_gobbler():
     stream_thread = threading.Thread(target=run_gobbler)
-    stream_thread.start()
+#    stream_thread.start()
