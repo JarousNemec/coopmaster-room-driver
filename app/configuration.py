@@ -25,11 +25,8 @@ class AppConfigError(Exception):
 class AppConfig:
     PORT: int = 29005
     HOST: str = "127.0.0.1"
-    ROOM_COM_PORT = "COM4"
+    ROOM_COM_PORT: str = "COM4"
     # ROOM_COM_PORT: str = "/dev/ttyUSB0"  # linux Ubuntu wth weight Arduino 'COM4'
-    ROOM_READ_INTERVAL_SEC: int = 1
-    ROOM_COMMAND_INTERVAL_SEC: int = 5
-
 
     """
     Map environment variables to class fields according to these rules:
