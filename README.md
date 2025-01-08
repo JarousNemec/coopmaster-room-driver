@@ -15,17 +15,17 @@ Součástí projektu je i firmware arduina.
 - python
 - c++ / wire (jazyk pro programování v arduino ide)
 - knihovny pro python
-  - Flask: Lehký webový framework, flexibilní a rychlý vývoj webových aplikací.
-  - colorama: Manipulace s barvami v textovém výstupu na terminálu.
-  - waitress: Rychlý WSGI server pro produkční nasazení webových aplikací.
-  - APScheduler: Plánování a automatizace úloh v Pythonu.
-  - requests: Jednoduché HTTP požadavky (GET, POST, atd.).
-  - Werkzeug: WSGI nástroje pro webové aplikace (routování, správa relací).
-  - python-dotenv: Načítání konfigurace z .env souborů.
-  - pyserial: Komunikace se sériovými zařízeními přes sériové porty.
+  - **Flask**: Lehký webový framework, flexibilní a rychlý vývoj webových aplikací.
+  - **colorama**: Manipulace s barvami v textovém výstupu na terminálu.
+  - **waitress**: Rychlý WSGI server pro produkční nasazení webových aplikací.
+  - **APScheduler**: Plánování a automatizace úloh v Pythonu.
+  - **requests**: Jednoduché HTTP požadavky (GET, POST, atd.).
+  - **Werkzeug**: WSGI nástroje pro webové aplikace (routování, správa relací).
+  - **python-dotenv**: Načítání konfigurace z `.env` souborů.
+  - **pyserial**: Komunikace se sériovými zařízeními přes sériové porty.
 - knihovny pro arduino
-  - defaultní Arduino.h
-  - DHT: pro ovládání teplotních+vlhkostních sezorů DHT11 a DHT22 
+  - defaultní **Arduino.h**
+  - **DHT**: pro ovládání teplotních+vlhkostních sezorů DHT11 a DHT22 
 
 ## hardware
 - arduino Nano v3.0
