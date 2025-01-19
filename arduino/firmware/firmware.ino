@@ -60,7 +60,6 @@ void serviceOutputs() {
   } else {
     digitalWrite(pinLight, LOW);
   }
-  Serial.println("ok");
 }
 
 void setup() {
