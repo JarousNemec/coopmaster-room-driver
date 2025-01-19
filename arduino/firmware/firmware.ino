@@ -1,9 +1,9 @@
 #include "DHT.h"
 
-#define pinDHT 5
-#define pinLight 2
-#define pinRele1 3
-#define pinRele2 4
+#define pinDHT 8
+#define pinLight 9
+#define pinRele1 12
+#define pinRele2 11
 
 DHT coopDHT(pinDHT, DHT11);
 
@@ -64,11 +64,12 @@ void serviceOutputs() {
 }
 
 void setup() {
-  Serial.begin(9600);
-  coopDHT.begin();
+  
   pinMode(pinLight, OUTPUT);
   pinMode(pinRele1, OUTPUT);
   pinMode(pinRele2, OUTPUT);
+  Serial.begin(9600);
+  coopDHT.begin();
   serviceOutputs();
 }
 
